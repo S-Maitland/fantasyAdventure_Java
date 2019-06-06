@@ -1,4 +1,10 @@
 package fantasyAdventure.characters;
 
-public class Wizard {
+import fantasyAdventure.equipment.Spell;
+
+public class Wizard extends Mage {
+
+    public Wizard(String name, Spell activeSpell) {
+        super(name, activeSpell);
+    }
 }

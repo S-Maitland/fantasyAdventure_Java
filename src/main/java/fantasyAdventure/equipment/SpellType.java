@@ -12,7 +12,7 @@ public enum SpellType {
         this.damageValue = damageValue;
     }
 
-    public int getDamageValue(){
+    public int getDamageValueFromEnum(){
         return this.damageValue;
     }
 }

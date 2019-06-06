@@ -11,7 +11,7 @@ public enum PotionType {
         this.healthValue = healthValue;
     }
 
-    public int getHealthValue(){
+    public int getHealthValueFromEnum(){
         return this.healthValue;
     }
 }

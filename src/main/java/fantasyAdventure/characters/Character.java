@@ -34,4 +34,12 @@ public abstract class Character {
         this.health -= damageValue;
     }
 
+    public void healCharacter(int healthValue) {
+        if (this.health + healthValue > 100) {
+            this.health = 100;
+        } else {
+            this.health += healthValue;
+        }
+    }
+
 }
