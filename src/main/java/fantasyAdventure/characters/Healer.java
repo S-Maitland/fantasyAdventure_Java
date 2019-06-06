@@ -17,8 +17,8 @@ public abstract class Healer extends Character implements IHeal {
         return activePotion;
     }
 
-    public void setActiveSpell(Spell activeSpell) {
-        this.activePotion = activePotion;
+    public void setActivePotion(Potion mushroom) {
+        this.activePotion = mushroom;
     }
 
     public void Heal(Character character) {
