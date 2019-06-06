@@ -11,6 +11,10 @@ public class characterTest {
     Warlock warlock;
     Cleric cleric;
     Ogre ogre;
+    Troll troll;
+
+    Armour armour;
+    Treasure goldBar;
 
     Spell warlockActiveSpell;
     Weapon knightActiveWeapon;
@@ -31,10 +35,13 @@ public class characterTest {
         warlock = new Warlock("Saruman", warlockActiveSpell);
         cleric = new Cleric("Dave", clericActivePotion);
         ogre = new Ogre("Thoug");
+        troll = new Troll("Grendel", 10);
 
         iceBlast = new Spell(SpellType.ICEBLAST);
         axe = new Weapon(WeaponType.AXE);
         mushroom = new Potion(PotionType.MUSHROOM);
+
+        goldBar = Treasure.GOLDBAR;
 
     }
 
@@ -83,6 +90,26 @@ public class characterTest {
 
         assertEquals(ogre, warlock.getProtector());
         assertEquals(100, warlock.getHealth());
-        assertEquals(88, ogre.getHealth());
+    }
+
+    @Test
+    public void knightHasArmourSoAttacksAreLessDeadly(){
+        armour = Armour.SUIT;
+        knight.addArmour(armour);
+        warlock.attack(knight);
+        assertEquals(94, knight.getHealth());
+    }
+
+    @Test
+    public void charactersCanFightWithEnemy(){
+        knight.attack(troll);
+        troll.attack(knight);
+        assertEquals(90, knight.getHealth());
+        assertEquals(88, troll.getHealth());
+    }
+
+    @Test
+    public void canBuildroom(){
+
     }
 }

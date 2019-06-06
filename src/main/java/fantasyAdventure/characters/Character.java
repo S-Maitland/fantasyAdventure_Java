@@ -1,6 +1,6 @@
 package fantasyAdventure.characters;
 
-import fantasyAdventure.equipment.EquipmentType;
+import fantasyAdventure.equipment.Treasure;
 
 import java.util.ArrayList;
 
@@ -8,10 +8,12 @@ public abstract class Character {
 
     private String name;
     private int health;
+    private ArrayList<Treasure> bounties;
 
     public Character(String name) {
         this.name = name;
         this.health = 100;
+        this.bounties = new ArrayList<Treasure>();
     }
 
     public String getName() {
