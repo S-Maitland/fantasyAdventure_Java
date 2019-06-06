@@ -44,4 +44,8 @@ public abstract class Character {
         }
     }
 
+    public void addBounty(Treasure treasure){
+        this.bounties.add(treasure);
+    }
+
 }

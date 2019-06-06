@@ -1,3 +1,5 @@
+import fantasyAdventure.Rooms.FightRoom;
+import fantasyAdventure.Rooms.TreasureRoom;
 import fantasyAdventure.characters.*;
 import fantasyAdventure.equipment.*;
 import org.junit.Before;
@@ -15,6 +17,8 @@ public class characterTest {
 
     Armour armour;
     Treasure goldBar;
+    TreasureRoom treasureRoom;
+    FightRoom fightRoom;
 
     Spell warlockActiveSpell;
     Weapon knightActiveWeapon;
@@ -42,6 +46,8 @@ public class characterTest {
         mushroom = new Potion(PotionType.MUSHROOM);
 
         goldBar = Treasure.GOLDBAR;
+        treasureRoom = new TreasureRoom("Gold Room");
+        fightRoom = new FightRoom("The Pit", troll);
 
     }
 
@@ -109,7 +115,20 @@ public class characterTest {
     }
 
     @Test
-    public void canBuildroom(){
+    public void canBuildFightRoomAndTreasureRoom(){
+        assertEquals("The Pit", fightRoom.getName());
+        assertEquals("Gold Room", treasureRoom.getName());
+    }
 
+    @Test
+    public void TreasureRoomTest(){
+        treasureRoom.addTreasure(goldBar);
+        assertEquals(1, treasureRoom.getCount());
+    }
+
+    @Test
+    public void canCompleteTreasureRoom(){
+        treasureRoom.removeTreasure(knight);
+        assertEquals(true, treasureRoom.checkCompletion());
     }
 }

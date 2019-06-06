@@ -11,4 +11,5 @@ public class FightRoom extends Room{
         this.enemy = enemy;
     }
 
+
 }
